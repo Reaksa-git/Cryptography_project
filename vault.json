@@ -1,0 +1,21 @@
+{
+  "bcrypt_hash": "$2a$12$ClniubCLbMeBV7dspp0goON3udBi60bQ8GJHYGikz7p7Bf/jF1Enu",
+  "salt": "u89/ntGDWuJuTNTMKKzubQ==",
+  "created_at": "2025-12-01T13:14:00.9307762+07:00",
+  "entries": [
+    {
+      "site": "ABC",
+      "username": "abc",
+      "password": "WnABTcrOkQdDCtTOFtExI9mzKw==",
+      "nonce": "KZSVI1AiAYFB3e9b",
+      "created_at": "2025-12-01T13:14:54+07:00"
+    },
+    {
+      "site": "google",
+      "username": "reak@gmail.com",
+      "password": "FZXnJR2GtmqcWVlXQ1omcu1vs4wgwHsZx4TRyw==",
+      "nonce": "6YK7KfMqtulBvldl",
+      "created_at": "2025-12-01T13:56:55+07:00"
+    }
+  ]
+}
