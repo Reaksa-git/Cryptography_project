@@ -1,94 +1,214 @@
 # Cryptography_project
 # Project Title: "Secure Password Manager using bcrypt and AES Encryption"
 
-1.	Overview of The Project Goal
-The goal of this project is to design and implement a secure password manager that allows users to safely store and retrieve their online account credentials. The system uses a master password for authentication and applied modern cryptographic techniques to ensure that all sored passwords remain encrypted , protected , and inaccessible to unauthorized users.
-The project demonstrates how secure systems project confidential information such as: Website logins , Application credentials , Personal passwords. It is look like or mimics the core security design of real password managers like LastPass, 1Password…, but in a simplified, educational form.
-2.	Problem Statement
-In modern digital life , a single user may have a lot of online accounts, including :
-•	Email
-•	Social media
-•	Banking apps
-•	Any apps…
-Because humans cannot remember many unique, strong passwords, they often:
-•	Reuse the same weak password across different services
-•	Store passwords in unsafe locations (notes apps, text files ,…)
-•	Forget login credentials
-•	Get exposed to credential-suffering attacks
-This behavior leads to serious cybersecurity risk such as:
-•	Account haked
-•	Data theft
-•	Unauthorized access
-Therefore, users need a secure way to store their passwords that does not expose them to attackers.
-3.	Solution Overview
-This project solve =s the problem by creating a locally encrypted password vault , protected using :
-•	Bcrypt hashing :
-Used to securely store the master password. Even if the vault file is stolen, attackers cannot recover the master password.
-•	PBKDF2 (Password-Based key Derivation Function):
-Used to convert the master password into a strong, 256-bit AES key through key stretching.
-•	AES Encryption (AES-GCM or AES-CBC): 
-Used to encrypt each saved password entry. Only the correct master password can decrypt the data.
-•	JSON vault storage: 
-All encrypted entries are stored in an easy-to-read but secure JSON file.
-This ensures that:
-•	Passwords are never stored in plaintext
-•	Even the developer cannot see user passwords
-•	Attackers cannot decrypt the vault without the correct master password
-4.	Motivation
-This project is motivated by : 
-•	Real world cybersecurity needs:
-Password managers are a critical part of modern security. Understanding their design helps improve such as Authentication mechanisms, Key management, Encryption practices.
-•	Hand on cryptography learning :
-Instead of study on Cryptography subject , this project will show the implementation of what I learned like about how encryption protects real data, how hashing prevents password theft.
-•	Practical usefulness:
-The project has direct value such as : Users can securely store credentials, Student learn how encrypted vaults work.
-5.	Related Cryptography Concepts
-This project integrated multiple cryptographic mechanisms:
-•	Bcrypt : Slow, adaptive password hashing algorithm.
-•	Salt: Random value added before hashing.
-•	PBKDF2: Converts a password into a strong AES key.
-•	IV/Nonce: Ensures identical passwords do not produce identical ciphertexts.
-•	JSON Storage: Stores encrypted entries.
+📝 Short Description
+
+This project is a **command-line–based secure password manager** developed using the **Go programming language**.
+It allows users to store and retrieve account credentials securely using a **single master password**.
+
+The system applies **cryptographic techniques** such as **bcrypt hashing**, **PBKDF2 key derivation**, and **AES encryption** to ensure that passwords are **never stored in plaintext**. All data is saved locally in an encrypted vault file.
+
+This project is designed for **educational purposes** to demonstrate how cryptography is applied in real-world security systems.
+Great question — this is **exactly the right thing to document** 
+What you want now is a **clear, honest, step-by-step explanation of the environment, dependencies, and setup fixes**, so that **anyone (lecturer, TA, GitHub reviewer)** can run your project **without the problems you faced**.
+
+## 🛠 Environment, Dependencies, and Setup Notes
+
+This project depends on a correctly configured **Go development environment** and external cryptographic libraries. During development, several configuration steps were required to ensure the project runs successfully and can be pushed to GitHub.
+
+This section documents all requirements and setup steps clearly so that others can reproduce the project without errors.
+
+## 💻 Development Environment
+
+* **Operating System:** Windows 10 / Windows 11
+* **IDE:** Visual Studio Code (VS Code)
+* **Go Version:** Go **1.22 or later**
+* **Version Control:** Git + GitHub
+
+The project was developed and tested using **Go Modules** for dependency management.
+
+## 📦 Required Libraries / Dependencies
+
+### 1️⃣ Go Standard Libraries (Built-in)
+
+These libraries are included automatically with Go and require no installation:
+
+| Package             | Purpose                         |
+| ------------------- | ------------------------------- |
+| `crypto/aes`        | AES encryption                  |
+| `crypto/cipher`     | AES-GCM encryption mode         |
+| `crypto/rand`       | Secure random number generation |
+| `crypto/sha256`     | Hash function for PBKDF2        |
+| `encoding/json`     | Vault file storage              |
+| `encoding/base64`   | Encode encrypted data           |
+| `os`, `io`, `bufio` | File and input handling         |
+| `time`              | Timestamp recording             |
 
 
-⚙️ Installation & Setup (Important)
+### 2️⃣ External Cryptographic Library
 
-Follow these steps exactly to avoid errors.
+This project **requires an external cryptography library**:
 
-Step 1: Verify Go Installation
+```
+golang.org/x/crypto
+```
+
+Used components:
+
+| Sub-package | Purpose                           |
+| ----------- | --------------------------------- |
+| `bcrypt`    | Secure hashing of master password |
+| `pbkdf2`    | Password-based key derivation     |
+
+This library **is not included by default** and must be installed using Go Modules.
+
+## 📁 Go Module Configuration
+
+The project uses a **Go module** defined in `go.mod`:
+
+```go
+module secure-password-manager
+
+go 1.22
+
+require golang.org/x/crypto v0.45.0
+```
+
+Go Modules ensure:
+
+* All dependencies are versioned
+* The project builds consistently on different machines
+
+## ⚙️ Installation & Setup
+
+Follow these steps **exactly** to avoid errors.
+
+### Step 1: Verify Go Installation
+
+```bash
 go version
+```
 
+Output should show **Go 1.22 or later**.
 
-Output should show Go 1.22 or later.
+### Step 2: Enable Go Modules (Important on Windows)
 
-Step 2: Enable Go Modules (Important on Windows)
+```powershell
 go env GO111MODULE
+```
 
+If it is `off`, enable it:
 
-If it is off, enable it:
-
+```powershell
 setx GO111MODULE on
-
+```
 
 Restart the terminal after running this command.
 
-Step 3: Install Dependencies
+### Step 3: Install Dependencies
 
 From the project root directory:
 
+```bash
 go mod tidy
-
+```
 
 This command:
 
-Downloads golang.org/x/crypto
+* Downloads `golang.org/x/crypto`
+* Fixes missing or unused dependencies
+* Generates `go.sum`
 
-Fixes missing or unused dependencies
+### Step 4: Build the Project (Optional but Recommended)
 
-Generates go.sum
-
-Step 4: Build the Project (Optional but Recommended)
+```bash
 go build .
-
+```
 
 If no error appears, the environment is correctly set up.
+
+## ▶️ Running the Program
+
+⚠️ **Important:**
+Do **NOT** run only `main.go`.
+This project consists of **multiple files** that must be compiled together.
+
+✅ Correct way:
+
+```bash
+go run .
+```
+
+or with a command:
+
+```bash
+go run . init
+go run . add
+go run . list
+go run . get Gmail
+```
+
+❌ Incorrect (causes undefined function errors):
+
+```bash
+go run main.go
+```
+
+
+## 📂 Vault File Requirement
+
+* The file `vault.json` is **automatically created** when running:
+
+```bash
+go run . init
+```
+
+* Users **should not create or edit this file manually**
+* All passwords inside are **encrypted**
+
+## ▶️ Usage Examples
+
+### 1️⃣ Initialize the Vault
+
+Creates a new encrypted vault and master password.
+
+```bash
+go run . init
+```
+
+### 2️⃣ Add a Password Entry
+
+Stores a new encrypted credential.
+
+```bash
+go run . add
+```
+
+### 3️⃣ List All Stored Entries
+
+Displays all stored passwords after authentication.
+
+```bash
+go run . list
+```
+
+### 4️⃣ Retrieve a Specific Entry
+
+Gets the password for a specific site.
+
+```bash
+go run . get <site>
+```
+
+Example:
+
+```bash
+go run . get Gmail
+```
+
+## 👤 Author
+
+**Name:** Tun Monireaksa
+**Course:** Cryptography
+**Project Type:** Individual Project
+
