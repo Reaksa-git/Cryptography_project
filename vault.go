@@ -29,3 +29,5 @@ func (v *Vault) GetEntry(site string) *Entry {
     }
     return nil
 }
+// vault.go
+// Defines vault and credential data structures.
