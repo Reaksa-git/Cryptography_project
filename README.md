@@ -49,3 +49,46 @@ This project integrated multiple cryptographic mechanisms:
 •	PBKDF2: Converts a password into a strong AES key.
 •	IV/Nonce: Ensures identical passwords do not produce identical ciphertexts.
 •	JSON Storage: Stores encrypted entries.
+
+
+⚙️ Installation & Setup (Important)
+
+Follow these steps exactly to avoid errors.
+
+Step 1: Verify Go Installation
+go version
+
+
+Output should show Go 1.22 or later.
+
+Step 2: Enable Go Modules (Important on Windows)
+go env GO111MODULE
+
+
+If it is off, enable it:
+
+setx GO111MODULE on
+
+
+Restart the terminal after running this command.
+
+Step 3: Install Dependencies
+
+From the project root directory:
+
+go mod tidy
+
+
+This command:
+
+Downloads golang.org/x/crypto
+
+Fixes missing or unused dependencies
+
+Generates go.sum
+
+Step 4: Build the Project (Optional but Recommended)
+go build .
+
+
+If no error appears, the environment is correctly set up.

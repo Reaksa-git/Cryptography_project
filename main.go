@@ -200,5 +200,5 @@ func getEntry(site string) {
 		}
 	}
 
-	fmt.Println("Entry not found:", site)
+	fmt.Println("Sorry!Entry not found:", site)
 }
