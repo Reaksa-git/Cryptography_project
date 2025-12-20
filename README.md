@@ -80,6 +80,12 @@ Go Modules ensure:
 * The project builds consistently on different machines
 
 ## ⚙️ Installation & Setup
+---
+### Clone the Repository
+```bash
+git clone https://github.com/Reaksa-git/Cryptography_project.git
+cd Cryptography_project
+---
 
 Follow these steps **exactly** to avoid errors.
 
