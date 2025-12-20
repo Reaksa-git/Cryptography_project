@@ -202,3 +202,6 @@ func getEntry(site string) {
 
 	fmt.Println("Sorry!Entry not found:", site)
 }
+// main.go
+// Entry point of the Secure Password Manager application.
+// Handles command-line arguments and program flow.
