@@ -79,9 +79,15 @@ Go Modules ensure:
 * All dependencies are versioned
 * The project builds consistently on different machines
 
-## ⚙️ Installation & Setup
+### ⚙️ Installation & Setup
 
-Follow these steps **exactly** to avoid errors.
+### Clone the Repository
+```bash
+git clone https://github.com/Reaksa-git/Cryptography_project.git
+cd Cryptography_project
+```
+
+### Follow these steps **exactly** to avoid errors.
 
 ### Step 1: Verify Go Installation
 
