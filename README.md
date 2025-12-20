@@ -1,7 +1,7 @@
 # Cryptography_project
 # Project Title: "Secure Password Manager using bcrypt and AES Encryption"
 
-📝 Short Description
+###  📝 Short Description
 
 This project is a **command-line–based secure password manager** developed using the **Go programming language**.
 It allows users to store and retrieve account credentials securely using a **single master password**.
@@ -23,7 +23,7 @@ This section documents all requirements and setup steps clearly so that others c
 * **Operating System:** Windows 10 / Windows 11
 * **IDE:** Visual Studio Code (VS Code)
 * **Go Version:** Go **1.22 or later**
-* **Version Control:** Git + GitHub
+* **Version Control:** GitHub
 
 The project was developed and tested using **Go Modules** for dependency management.
 
@@ -205,6 +205,39 @@ Example:
 ```bash
 go run . get Gmail
 ```
+
+### Repository & Version Control
+
+* Only the following files are pushed to GitHub:
+
+| File         |  Reason                |
+| ------------ |  --------------------- |
+| `main.go`    |  Source code           |
+| `crypto.go`  |  Cryptographic logic   |
+| `vault.go`   |  Data structures       |
+| `storage.go` |  File handling         |
+| `go.mod`     |  Dependency definition |
+| `go.sum`     |  Dependency integrity  |
+| `README.md`  |  Documentation         |
+| `.gitignore` |  Professional practice |
+
+* The following files are **not pushed**:
+
+  * `secure-password-manager.exe` → compiled binary
+  * `vault.json` → contains encrypted user data
+  * Temporary logs (`*.log`)
+
+* `.gitignore` is configured to prevent accidental commits of sensitive or unnecessary files:
+
+```
+*.exe
+vault.json
+*.log
+```
+
+> This demonstrates secure version-control practices and professionalism.
+
+
 
 ## 👤 Author
 
