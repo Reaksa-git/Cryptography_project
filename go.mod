@@ -1,3 +1,4 @@
+// Go module definition for Secure Password Manager
 module secure-password-manager
 
 go 1.24.0
