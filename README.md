@@ -85,10 +85,7 @@ Go Modules ensure:
 ```bash
 git clone https://github.com/Reaksa-git/Cryptography_project.git
 cd Cryptography_project
-
----
-
-
+```
 
 ### Follow these steps **exactly** to avoid errors.
 
