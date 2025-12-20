@@ -39,3 +39,5 @@ func VaultExists() bool {
     _, err := os.Stat(vaultFile)
     return !os.IsNotExist(err)
 }
+// storage.go
+// Handles file storage, loading, and saving of vault data.
