@@ -3,3 +3,5 @@
 
 # Sensitive vault data
 vault.json
+
+# Ignore compiled binaries and sensitive vault files
