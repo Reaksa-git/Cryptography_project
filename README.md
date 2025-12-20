@@ -1,7 +1,6 @@
 # Cryptography_project
 # Project Title: "Secure Password Manager using bcrypt and AES Encryption"
 
-I.	Introduction / Background 
 1.	Overview of The Project Goal
 The goal of this project is to design and implement a secure password manager that allows users to safely store and retrieve their online account credentials. The system uses a master password for authentication and applied modern cryptographic techniques to ensure that all sored passwords remain encrypted , protected , and inaccessible to unauthorized users.
 The project demonstrates how secure systems project confidential information such as: Website logins , Application credentials , Personal passwords. It is look like or mimics the core security design of real password managers like LastPass, 1Password…, but in a simplified, educational form.

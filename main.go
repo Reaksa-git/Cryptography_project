@@ -47,8 +47,8 @@ func main() {
 // -------------------- COMMANDS --------------------
 
 func showUsage() {
-	fmt.Println("Commands:")
-	fmt.Println("  init       Create new vault")
+	fmt.Println("Commands:(which one that you prefer)")
+	fmt.Println("  init       = Create new vault")
 	fmt.Println("  add        Add a password entry")
 	fmt.Println("  list       List all entries")
 	fmt.Println("  get <site> View one entry")
