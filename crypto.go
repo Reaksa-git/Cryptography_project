@@ -72,3 +72,6 @@ func EncodeBase64(b []byte) string {
 func DecodeBase64(s string) ([]byte, error) {
     return base64.StdEncoding.DecodeString(s)
 }
+// crypto.go
+// Implements cryptographic operations such as hashing,
+// key derivation, encryption, and decryption.
